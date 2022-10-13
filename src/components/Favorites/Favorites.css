@@ -1,0 +1,63 @@
+.contenedor-banner-fav {
+  background-image: url(../img/cineee.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 780px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: baseline;
+}
+li{
+  list-style: none;
+}
+.contenedor-titulo {
+  width: 100%;
+}
+
+.titulo-fav {
+  font-size: 45px;
+  padding: 7px;
+  text-shadow: 2px 7px 5px rgba(144, 142, 142, 0.39), 0px -4px 10px white;
+}
+
+.contenedor-padre-cars {
+  display: flex;
+  gap: 1rem;
+  padding: 5px;
+}
+
+.contenedor-cards {
+  display: flex;
+  padding: 7px;
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+.imagen-fav {
+  border: solid 1px white;
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.contenedor-btn {
+  padding: 2px;
+}
+
+.btn-eliminar-fav {
+  width: 20px;
+  height: 20px;
+  border: solid 1px black;
+  border-radius: 10px;
+  background-color: rgb(13, 124, 149);
+}
+
+.btn-eliminar-fav:hover {
+  box-shadow: 0 0 10px #949496, 0 0 40px #fdfdfd, 0 0 80px #fafafa;
+  transition-delay: 0s;
+  transform: translateY(-2px);
+
+}

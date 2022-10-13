@@ -1,0 +1,29 @@
+
+.movie-detalle-padre{
+  background-image: url(../img/cineee.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 780px;
+}
+.movie-detalle-hijo{
+  padding: 5px;
+    display: flex; 
+    margin: 0px auto;
+    background: rgba(0, 0, 0, 0.7);
+   
+}
+
+.movie-card-detalle img{
+  border-radius: 20px;
+}
+
+.card-inf-extra{
+  width: 100%;
+  padding: 20px 40px;
+  color:white;
+  overflow: hidden;
+}
+.titulo-info-extra{
+  text-shadow: 2px 7px 5px rgba(122, 121, 121, 0.3), 0px -4px 10px white;
+}

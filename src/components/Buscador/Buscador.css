@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+
+/*nav y banner */
+
+.contenedor-buscador {
+  background-color: black;
+}
+.contenedor-banner {
+  background-color: black;
+  background-image: url(../img/pelis-biblioteca.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+}
+.texto-titulo {
+  margin-left: 50px;
+  padding: 5px;
+  padding-top: 480px;
+  font-size: 45px;
+  color: white;
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgb(255, 255, 255);
+}
+.texto-parrafo {
+  margin-left: 50px;
+  padding: 5px;
+  font-size: 25px;
+  color: white;
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgb(255, 255, 255);
+}
+/* buscador de peliculas*/
+.form-container {
+  background-color: black;
+  height: 75px;
+}
+.contenedor-buscar-peli {
+  position: relative;
+  margin: 20px 20px 20px 20px;
+  padding: 0px auto;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  height: 55px;
+  border-radius: 40px;
+  background-color: #353535;
+  padding: 0px auto;
+}
+
+.buscar-pelicula {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 5px;
+  margin: 8px 0px;
+  padding: 0px 0px 0px 60px;
+  border: 0px;
+  width: 95%;
+  background: transparent;
+  height: 40px;
+  color: white;
+}
+.buscar-pelicula:focus {
+  outline: none;
+}
+
+/* lista de peliculas */
+.contenedor-list-peli {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 5px;
+}
+/* contenedor de cards */
+.card-list-peli {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 7px;
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.7);
+  border: solid 1px white;
+  border-radius: 2px;
+}
+
+.img-pelis {
+  width: 100%;
+  height: 400px;
+  max-width: 720px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* boton agregar a favorito */
+
+.btn-fav {
+  margin-left: 35px;
+  list-style: none;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border: 0.1px solid #099fff;
+  background-color: #181818;
+  box-shadow: 0 4px 8px 0 #00ffff, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn-text {
+  margin: auto;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-fav:hover {
+  box-shadow: 0 0 10px #949496, 0 0 40px #fdfdfd, 0 0 80px #fafafa;
+  transition-delay: 0s;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,55 @@
+/* barra de navegacion */
+.navbar {
+    height: 100px;
+    width: 100%;
+    background-color: #303236;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+#pelicula-logo-img{
+padding: 5px;
+}
+
+
+.contenedor-logo{
+    display: flex;
+    align-items: center;
+    color: aliceblue;   
+}
+.list {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 100%;
+}
+
+.list-item {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    width: auto;
+    align-items: center;
+}
+
+.list-item a {
+    text-decoration: none;
+    color: rgba(237, 242, 240, 0.98);
+    height: 100%;
+    padding: 16px 10px;
+    font-size: 25px;
+    border-bottom: 4px solid transparent;
+}
+.list-item a:hover{
+    background: #58585a; 
+     box-shadow: 0 0 10px #fafafa, 0 0 40px #fdfdfd, 0 0 80px #fafafa;
+     transition-delay: 0s; 
+  
+}
+
+
+
