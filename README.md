@@ -1,8 +1,6 @@
 # Aplicacion con React-Redux(app movies).
 
- <video width="500" height="500" autoplay>
-  <source src="./video/video.mp4" type="video/mp4">
-</video> 
+ <img src="img-app-pelis.png" alt="img" width="400"/>
 
 cree una APP que utiliza la API de [OMDB](http://www.omdbapi.com/).utilizando __REACT__ y __REDUX__.
 funcionalidades de la app:
