@@ -3,6 +3,7 @@ export const ADD_MOVIE_FAVORITE = "ADD_MOVIE_FAVORITE";
 export const GET_MOVIES = "GET_MOVIES";
 export const REMOVE_MOVIE_FAVORITE = "REMOVE_MOVIE_FAVORITE";
 export const GET_DETAILS = "GET_DETAILS";
+export const ADD_MOVIE_CARGARAUTO = "ADD_MOVIE_CARGARAUTO";
 
 //clave api.
 const api_key = "36e54fcf";
@@ -29,6 +30,10 @@ export function getMovieDetail(id) {
 
 export function addMovieFavorite(payload) {
   return { type: ADD_MOVIE_FAVORITE, payload };
+}
+
+export function addmovieLoad(payload) {
+  return { type: ADD_MOVIE_CARGARAUTO, payload };
 }
 
 export function removeMovieFavorite(payload) {

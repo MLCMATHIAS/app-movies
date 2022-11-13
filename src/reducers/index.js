@@ -1,9 +1,12 @@
-import {ADD_MOVIE_FAVORITE,GET_MOVIES,REMOVE_MOVIE_FAVORITE,GET_DETAILS,} from "../actions";
+import {ADD_MOVIE_FAVORITE,GET_MOVIES,REMOVE_MOVIE_FAVORITE,
+        GET_DETAILS,ADD_MOVIE_CARGARAUTO} from "../actions";
 
 const initialState = {
   moviesFavorites: [],
   moviesLoaded: [],
   movieDetail: {},
+  cargarPelisAutos:[],
+  wait:true,
 };
 
 //acciones.
@@ -14,6 +17,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         moviesLoaded: action.payload,
+        wait:false,
       };
 
       case GET_DETAILS:
@@ -26,6 +30,13 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         moviesFavorites: state.moviesFavorites.concat(action.payload),
+        
+      };
+
+      case ADD_MOVIE_CARGARAUTO:
+      return {
+        ...state,
+        cargarPelisAutos: state.cargarPelisAutos.concat(action.payload),
       };
 
       case REMOVE_MOVIE_FAVORITE:
