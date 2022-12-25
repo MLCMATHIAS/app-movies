@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Favorites.css";
-import { removeMovieFavorite } from "../../actions";
+import { removeMovieFavorite } from "../../redux/actions/index";
 
 
 export class ConnectedList extends Component {
@@ -48,5 +48,5 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-
+//le paso la accion de removeMovieFavorite para eliminar.
 export default connect(mapStateToProps, mapDispatchToProps)(ConnectedList);

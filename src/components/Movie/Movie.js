@@ -1,13 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getMovieDetail } from "../../actions/index";
+import { getMovieDetail } from "../../redux/actions/index";
 import "./Movie.css";
 
+//Ahora cuando hagamos click en alguna pelicula nos deberia llevar a la ruta `/movie/{movie-id}`. En nuestro componente Movie tenemos que usar ese parametro para usarlo en nuestra `getMovieDetail` function. Podemos acceder a este valor gracias a las `props` que nos da `react-router`.
+//debemos poner componetDidMount :para que cuando el componente se valla a montar, no se pierda lo cargado en el render:osea la informacion ya obtenida.y al refrescar la pantalla en el navegador ,nose pierda la info y quede en blanco.
 
 class Movie extends React.Component {
   componentDidMount() { 
     this.props.getMovieDetail(this.props.match.params.id);
+    //con this.props.match.params.id,tomamos el valor de nuestro id.
+    //anda a buscar ese detalle en particular.
   }
+
+  /*Llamamos a la funcion `getMovieDetail` y le pasamos nuestro ID todo dentro de nuestro `componentDidMount`. Una vez obtenido los datos tendriamos que tenerlos en `this.props.movieDetail` (obtenidos desde nuestro mapStateToProps y guardado en nuestro initalState). Y por ultimo mostramos detalles de la pelicula por ej: Titulo, Año, Rating, Plot, Premios, Genero, etc... Ej:*/
 
   render() {
     return (  
@@ -42,6 +48,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getMovieDetail: (id) => dispatch(getMovieDetail(id)),
+    //getmoviedetail:va a ser una funcion,que va a recibir una propiedad:(id),y esa propiedad va a despachar una accion:(getMovieDetail(id)).
   };
 }
 
