@@ -50,7 +50,7 @@ export class Buscador extends Component {
     return (
       <div className="contenedor-buscador">       
         <div className="contenedor-banner">        
-        <h1 className="texto-titulo">Tus movies </h1>
+        <h1 className="texto-titulo"> Movies Mlc </h1>
       <p className="texto-parrafo">Encontra todas tus peliculas favoritas en un solo sitio y gratis!Terror, Accion, Suspenso, Documentales, Anime y mas..!</p>
         </div>
       
@@ -118,20 +118,25 @@ export class Buscador extends Component {
 Usamos las funciones `mapStateToProps` y `mapDispatchToProps` dentro de nuestros componentes. La primera nos permite traer nuestro state global como props a nuestro componente, y la segunda nos permite hacer el `dispatch` de nuestras actions al store. Y para terminar de conectar nuestro componente con el store global usamos una HoC ( High Order Component ) que importamos de la libreria 'react-redux' que se llama `connect`.
 */
 
-//mapStateToProps toma el estado redux,que me va a guardar en mi componente una propiedad que se va a llamar en este caso movies que va a ser igual state.moviesLoaded ,que es donde voy a ir guardondo las pelis que busco por titulo.
+//mapStateToProps toma el estado redux,que me va a guardar en mi componente una
+// propiedad que se va a llamar en este caso movies que va a ser igual state.
+//moviesLoaded ,que es donde voy a ir guardondo las pelis que busco por titulo.
 
+//me permite acceder al estado global(volores o propiedades)
+//para luego despacharlas como props
 function mapStateToProps(state) {
   return {
-    movies: state.moviesLoaded,//
+    movies: state.moviesLoaded,
     peliculasPrecargar: state.cargarPelisAutos,
     wait:state.wait,
   };
 }
-
-function mapDispatchToProps(dispatch) {//recibe a dispatch,para despachar acciones.
+//me permite despachar acciones
+//para luego poder usarlas como props
+function mapDispatchToProps(dispatch) {
   return {
     //me guarda en una props mi componente llamado getmoviesFavorites.que recibe un parametro (movie),que cuando hago props.addmoviesFavorites y la ejecute pasandole un ´parametro (movie),va a estar haciendo un dispatch de la accion (addMovieFavorite(movie)).
-    addMovieFavorite: (movie) => dispatch(addMovieFavorite(movie)),
+    addMovieFavorite: (movie) => dispatch(addMovieFavorite(movie)),//despacha una accion creator
     getMovies: (title) => dispatch(getMovies(title)),
     addmovieLoad:(data) => dispatch(addmovieLoad(data)),
     
