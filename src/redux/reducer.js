@@ -1,5 +1,5 @@
 import {ADD_MOVIE_FAVORITE,GET_MOVIES,REMOVE_MOVIE_FAVORITE,
-        GET_DETAILS,ADD_MOVIE_CARGARAUTO} from "../actions/index";
+        GET_DETAILS,ADD_MOVIE_CARGARAUTO} from "./action";
 
 //paso 2°:
 //creamos nuestro estado inicial.
@@ -12,7 +12,8 @@ const initialState = {
 };
 
 
-//creo los 4 reducers para las 4 acciones que creamos anteriormente que son:`getMovies`, `getMovieDetail`, `removeMovieFavorite`,`addMovieFavorite`.
+//creo los 4 reducers para las 4 acciones que creamos anteriormente que son:
+//`getMovies`, `getMovieDetail`, `removeMovieFavorite`,`addMovieFavorite`.
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
@@ -22,36 +23,42 @@ function rootReducer(state = initialState, action) {
         moviesLoaded: action.payload,//accede a la propiedad que me devolvio la api.
         wait:false,
       };
+
 //detalles de la peli:autor,actores,genero ect.
       case GET_DETAILS://cuando la accion de su typo se get_details
       return {
         ...state,//hace una copia del estado
         movieDetail: action.payload,//en mi nuevo estado quiero que movieDetail me muestre el detalle de la peli.
       };
-//agregar una pelicula a favoritos
-    case ADD_MOVIE_FAVORITE://cuando la accion de su typo se get_movie_favorite
+
+//agregar una pelicula a favoritos.
+    case ADD_MOVIE_FAVORITE://cuando la accion de su typo sea get_movie_favorite
       return {
         ...state,//hace una copia del estado
         moviesFavorites: state.moviesFavorites.concat(action.payload),
         // moviesFavourites:[...state.moviesFavourites,action.payload]//con metodo spread operator.
-          //lo que hace es:traeme todo lo que ya haya en el moviesFavourites,y agregale lo que me venga en la action.
+        //lo que hace es:traeme todo lo que ya haya en el moviesFavourites,
+        //y agregale lo que me venga en la action.
       };
+
 //cargar las pelis automaticamente al iniciar la pagina.
       case ADD_MOVIE_CARGARAUTO:
       return {
         ...state,//hace una copia del estado
-        cargarPelisAutos: state.cargarPelisAutos.concat(action.payload),
+        cargarPelisAutos:[...state.cargarPelisAutos,action.payload]
       };
+
 //elimino una pelicula de favoritos.
       case REMOVE_MOVIE_FAVORITE://cuando la accion de su typo sea
       return {
         ...state,//hace una copia del estado
         moviesFavorites: state.moviesFavorites.filter( movie =>
          movie.id !== action.payload,
-         //cambio el estado de moviesFavourite.
+        //cambio el estado de moviesFavourite.
         //en mi nuevo estado quiero que:
-        //con el metodo filter, saque una pelicula//(m=> :recibe cada una de las pelis
-        //m.id !== action.payload:dejame pasar cuyo id sea diferente al que me vino al payload de la accion.        
+        //con el metodo filter, saque una pelicula//(m => :recibe cada una de las pelis.
+        //m.id !== action.payload:dejame pasar cuyo id sea diferente al que me vino al
+        // payload de la accion.        
         ),
       };
     default:
